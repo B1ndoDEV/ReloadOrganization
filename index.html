@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RELOAD ORGANIZATION</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Orbitron',sans-serif;}
+body{background:black;color:white;overflow-x:hidden;}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
+flex-direction:column;
+}
+.hero video{
+position:fixed;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
+filter:brightness(0.4);
+}
+.hero h1{
+text-shadow:0 0 25px cyan;
+font-size:70px;
+margin-bottom:20px;
+}
+.hero p{
+color:cyan;
+margin-bottom:40px;
+font-size:20px;
+max-width:800px;
+}
+
+/* ENTER BUTTON */
+.enter-btn{
+padding:15px 50px;
+font-size:25px;
+color:black;
+background:cyan;
+border:none;
+border-radius:15px;
+cursor:pointer;
+text-decoration:none;
+transition:0.3s;
+}
+.enter-btn:hover{background:#00baba;}
+
+/* GLOW */
+.glow{
+position:fixed;
+width:150px;
+height:150px;
+border-radius:50%;
+background:radial-gradient(circle,rgba(0,255,255,0.3),transparent 70%);
+pointer-events:none;
+transform:translate(-50%,-50%);
+}
+
+/* TOPNAV */
+.topnav{
+position:fixed;top:0;width:100%;
+background:rgba(0,0,0,0.8);
+display:flex;justify-content:space-between;
+padding:15px 10%;z-index:1000;align-items:center;
+}
+.nav-links a{
+color:white;text-decoration:none;margin:0 10px;
+position:relative;transition:0.3s;
+}
+.nav-links a::after{
+content:"";
+position:absolute;
+bottom:-5px;left:0;
+width:0%;height:2px;
+background:cyan;transition:0.3s;
+}
+.nav-links a:hover{
+color:#00ffff;
+text-shadow:0 0 10px cyan;
+}
+.nav-links a:hover::after{width:100%;}
+
+/* LANGUAGE MENU */
+.lang-menu{position:relative;margin-left:20px;}
+.lang-btn{
+border:1px solid cyan;padding:6px 12px;border-radius:10px;
+cursor:pointer;transition:0.3s;background:#111;color:white;white-space:nowrap;
+}
+.lang-btn:hover{background:cyan;color:black;box-shadow:0 0 15px cyan;}
+.lang-dropdown{
+position:absolute;top:40px;right:0;background:#111;
+border:1px solid cyan;border-radius:10px;
+display:none;flex-direction:column;min-width:180px;overflow:hidden;z-index:1001;
+}
+.lang-dropdown div{
+padding:10px;cursor:pointer;transition:0.3s;white-space:nowrap;
+}
+.lang-dropdown div:hover{background:cyan;color:black;}
+
+/* SECTIONS */
+.section{padding:120px 10%;}
+.cards{display:flex;gap:20px;margin-top:20px;}
+.card{
+flex:1;padding:50px;background:#111;border:1px solid cyan;color:#00ffff;
+text-decoration:none;text-align:center;transition:0.3s;
+}
+.card:hover{transform:translateY(-10px) scale(1.03);box-shadow:0 0 20px cyan;}
+
+.partners{text-align:center;padding:80px;}
+.partner-list a{
+margin:10px;padding:15px 25px;border:1px solid cyan;color:#00ffff;
+text-decoration:none;display:inline-block;transition:0.3s;
+}
+.partner-list a:hover{background:cyan;color:black;box-shadow:0 0 20px cyan;}
+
+/* CONTACT */
+.contact{padding:100px 10%;display:flex;justify-content:center;}
+.contact-box{
+background:rgba(255,255,255,0.08);border-radius:20px;
+padding:40px 60px;backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.2);text-align:center;transition:0.3s;
+}
+.contact-box:hover{box-shadow:0 0 25px cyan;}
+
+.version-footer{text-align:center;color:cyan;margin:40px;}
+</style>
+</head>
+<body>
+
+<header class="topnav">
+<div>RELOAD</div>
+<div style="display:flex;align-items:center;">
+<div class="nav-links">
+<a href="#hero" data-key="about">О нас</a>
+<a href="#platform" data-key="directions">Направления</a>
+<a href="#partners" data-key="partners">Партнёры</a>
+<a href="#contact" data-key="contacts">Контакты</a>
+</div>
+<div class="lang-menu">
+<div class="lang-btn" id="langBtn">🌐 RU</div>
+<div class="lang-dropdown" id="langDropdown">
+<div data-lang="ru">🇷🇺 Русский</div>
+<div data-lang="en">🇬🇧 English</div>
+<div data-lang="ua">🇺🇦 Українська</div>
+<div data-lang="tr">🇹🇷 Türkçe</div>
+<div data-lang="de">🇩🇪 Deutsch</div>
+<div data-lang="es">🇪🇸 Español</div>
+</div>
+</div>
+</div>
+</header>
+
+<section class="hero" id="hero">
+<video autoplay muted loop>
+<source src="https://cdn.coverr.co/videos/coverr-gaming-setup-5176/1080p.mp4">
+</video>
+<div class="glow" id="glow"></div>
+<h1>RELOAD ORGANIZATION</h1>
+<p data-key="desc">Reload Organization – организация, которая насчитывает в себе Sixen, Scoutix, Cupix и The Tarakanz. Мы собираем весь Tier-6</p>
+<a href="https://t.me/reloadorganization" class="enter-btn" target="_blank">ENTER</a>
+</section>
+
+<section class="section" id="platform">
+<h2 data-key="directions">Наши направления</h2>
+<div class="cards">
+<a href="https://t.me/cupixtier6" target="_blank" class="card" data-key="tournaments">Tournaments</a>
+<a href="https://t.me/thetarakanz" target="_blank" class="card" data-key="teams">Teams</a>
+<a href="https://t.me/sixentier6" target="_blank" class="card" data-key="news">News</a>
+</div>
+</section>
+
+<section class="partners" id="partners">
+<h2 data-key="bigpartners">Самые Большие Партнёры</h2>
+<div class="partner-list">
+<a href="https://t.me/teamelephants" target="_blank">Team Elephants</a>
+<a href="https://t.me/mqertz" target="_blank">GSesport</a>
+<a href="https://t.me/mtl_official0" target="_blank">Mental Ilness</a>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="contact-box">
+<h2>Contact</h2>
+<p>DISCORD - _polakplak_</p>
+<p>TELEGRAM - @Sigmosssss</p>
+</div>
+</section>
+
+<div class="version-footer">Version 1.3.1</div>
+
+<script>
+// LANGUAGE MENU
+const translations={
+ru:{about:"О нас",directions:"Направления",partners:"Партнёры",contacts:"Контакты",desc:"Reload Organization – организация, которая насчитывает в себе Sixen, Scoutix, Cupix и The Tarakanz. Мы собираем весь Tier-6",tournaments:"Турниры",teams:"Команды",news:"Новости",bigpartners:"Самые большие партнёры"},
+en:{about:"About",directions:"Directions",partners:"Partners",contacts:"Contacts",desc:"Reload Organization is an organization that includes Sixen, Scoutix, Cupix and The Tarakanz. We gather the entire Tier-6",tournaments:"Tournaments",teams:"Teams",news:"News",bigpartners:"Top Partners"},
+ua:{about:"Про нас",directions:"Напрямки",partners:"Партнери",contacts:"Контакти",desc:"Reload Organization – організація, що включає Sixen, Scoutix, Cupix та The Tarakanz. Ми збираємо весь Tier-6",tournaments:"Турніри",teams:"Команди",news:"Новини",bigpartners:"Найбільші партнери"},
+tr:{about:"Hakkında",directions:"Yönler",partners:"Ortaklar",contacts:"İletişim",desc:"Reload Organization, Sixen, Scoutix, Cupix ve The Tarakanz'ı içeren bir organizasyondur. Tüm Tier-6'yı topluyoruz",tournaments:"Turnuvalar",teams:"Takımlar",news:"Haberler",bigpartners:"En Büyük Ortaklar"},
+de:{about:"Über uns",directions:"Bereiche",partners:"Partner",contacts:"Kontakte",desc:"Reload Organization ist eine Organisation mit Sixen, Scoutix, Cupix und The Tarakanz. Wir sammeln das gesamte Tier-6",tournaments:"Turniere",teams:"Teams",news:"Nachrichten",bigpartners:"Größte Partner"},
+es:{about:"Sobre nosotros",directions:"Direcciones",partners:"Socios",contacts:"Contactos",desc:"Reload Organization es una organización que incluye Sixen, Scoutix, Cupix y The Tarakanz. Reunimos todo Tier-6",tournaments:"Torneos",teams:"Equipos",news:"Noticias",bigpartners:"Principales socios"}
+};
+
+const dropdown=document.getElementById("langDropdown");
+const btn=document.getElementById("langBtn");
+btn.onclick=()=> {dropdown.style.display = dropdown.style.display==="flex"?"none":"flex";};
+document.querySelectorAll(".lang-dropdown div").forEach(item=>{
+item.onclick=()=>{
+const lang=item.dataset.lang;
+document.querySelectorAll("[data-key]").forEach(el=>{el.textContent=translations[lang][el.dataset.key];});
+btn.textContent=item.textContent;
+dropdown.style.display="none";
+};
+});
+document.addEventListener("click",e=>{if(!e.target.closest(".lang-menu")){dropdown.style.display="none";}});
+
+// GLOW
+const glow=document.getElementById("glow");
+let mouseX=window.innerWidth/2,mouseY=window.innerHeight/2;
+let glowX=mouseX,glowY=mouseY;
+document.addEventListener("mousemove",e=>{mouseX=e.clientX;mouseY=e.clientY;});
+function animate(){glowX+=(mouseX-glowX)*0.08;glowY+=(mouseY-glowY)*0.08;glow.style.left=glowX+"px";glow.style.top=glowY+"px";requestAnimationFrame(animate);}
+animate();
+
+// ENTER KEY OPEN TELEGRAM
+document.addEventListener("keydown", e=>{
+if(e.key==="Enter"){
+window.open("https://t.me/reloadorganization","_blank");
+}
+});
+</script>
+
+</body>
+</html>
